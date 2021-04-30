@@ -3,7 +3,20 @@
     <head>
         <Title>PLUGIN</Title>
         <script>
-            
+            window.onload = function() {
+                var textBox1 = document.createElement('input')
+                textBox1.id = "first"
+                textBox1.type = "text"
+                document.body.appendChild(textBox1)
+
+                document.body.appendChild(document.createElement("br"))
+
+                var goButton = document.createElement('button')
+                goButton.id = "go"
+                goButton.innerHTML = "Go" 
+                document.body.appendChild(goButton) 
+                goButton.onclick = buttonClick
+            }
         </script>
     </head>
     <body>
