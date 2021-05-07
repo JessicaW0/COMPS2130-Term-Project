@@ -1,30 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <Title>ALPHABET</Title>
-        <script>
-             window.onload = function() {
-                var textBox1 = document.createElement('input')
-                textBox1.id = "first"
-                textBox1.type = "text"
-                document.body.appendChild(textBox1)
+  <head>
+    <meta charset="UTF-8">
+    <style>
+        img{width:40px}
+    </style>
+    <title>ALPHABET</title>
+    <script>
+        // after the window finishes loading
+        // create a textbox and a button
+		// when the button is clicked: remove all images and HRs from the body
+		// and then create an image for each letter in the textbox,
+		// and put the images at the end of the body
+		// also, if there is a space, put an <hr> instead
 
-                document.body.appendChild(document.createElement("br"))
+        onload=function()
+        {
+            let myTextbox = document.createElement("input")
+            myTextbox.type = "text"
+            myTextbox.id = "t"
+            document.body.appendChild(myTextbox)
+            myTextbox.focus()
 
-                var goButton = document.createElement('button')
-                goButton.id = "go"
-                goButton.innerHTML = "Go" 
-                document.body.appendChild(goButton) 
-                goButton.onclick = buttonClick
-            }
+            document.body.appendChild(document.createElement('br'))
+
+            let myButton = document.createElement("input")
+            myButton.type = "button"
+            myButton.id = "b"
+            myButton.value = "Go"
+            document.body.appendChild(myButton)
             
-        </script>
-    </head>
-    <body>
-    </body>
+            document.body.appendChild(document.createElement('br'))
+
+            myButton.onclick=function()
+            {
+               for(let i = 'z'.charCodeAt(0); i => 'a'.charCodeAt(0); i++)
+               {
+                let letter = String.fromCharCode(i)
+
+                let img = document.createElement('img')
+                img.width = 40
+                img.id = letter
+                img.src = "images/letters/" + letter + ".png"
+
+                document.body.appendChild(img)
+               }
+            }
+
+        }
+
+        
+    </script>
+  </head>
+  <body></body>
 </html>
+
+
+
+
+<!-- 
+            //  window.onload = function() {
+            //     var textBox1 = document.createElement('input')
+            //     textBox1.id = "first"
+            //     textBox1.type = "text"
+            //     document.body.appendChild(textBox1)
+
+            //     document.body.appendChild(document.createElement("br"))
+
+            //     var goButton = document.createElement('button')
+            //     goButton.id = "go"
+            //     goButton.innerHTML = "Go" 
+            //     document.body.appendChild(goButton) 
+            //     goButton.onclick = buttonClick
+            // } -->
+                
+
 <!-- SOFIA -->
 <!-- alphabet.html: if the text in the textbox has the word “alphabet” in it then loop through the
-letters backwards from z to a and append images of the letters to the document; each letter
-must be 40px wide. Whenever a letter is clicked, all the images on the document get that
-letter’s src -->
+// letters backwards from z to a and append images of the letters to the document; each letter
+// must be 40px wide. Whenever a letter is clicked, all the images on the document get that
+// letter’s src -->
