@@ -1,1 +1,33 @@
-sofia 
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>PLUGIN</Title>
+        <script>
+            window.onload = function() {
+                var textBox1 = document.createElement('input')
+                textBox1.id = "first"
+                textBox1.type = "text"
+                document.body.appendChild(textBox1)
+
+                document.body.appendChild(document.createElement("br"))
+
+                var goButton = document.createElement('button')
+                goButton.id = "go"
+                goButton.innerHTML = "Go" 
+                document.body.appendChild(goButton) 
+                goButton.onclick = buttonClick
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
+<!-- SOFIA  -->
+
+<!-- plugin.html: if the text in the textbox has the word “plugin” in it, then a hyperlink is created
+using document.createElement and appended to the body. Its href attribute value will be
+“plugin.html” which is another web page that you have written too. Here you will show off any  
+
+jquery plugin you want. There are some awesome and useful jquery plugins, and you can choose
+any one. Clearly, the more “wow” it has, the better it is.
+-->
