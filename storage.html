@@ -14,12 +14,16 @@
             margin: 200px;
         }
         
+ *{
+  box-sizing: border-box;
+}
+
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
-  width: 370px;
   padding: 10px;
-
+  height: 200px;
+  width: 270px;
 }
 
 /* Clear floats after the columns */
@@ -46,16 +50,24 @@
          
         </fieldset>
 
-<div class="row">
-  <div class="column" style="background-color:rgb(176, 208, 255);">
-    <h2>Method</h2>
-    <ul>
-        <li>setItem()<span> Add key and value to local storage</li></span>
-        <li>getItem()<span> Retrieve a value by the key</span></li>
-        <li>removeItem()<span> Remove an item by key</span></li>
-        <li>clear()	<span> Clear all storage</span></li>
-      </ul>  
-  </div>
+        <div class="row">
+            <div class="column" style="background-color:#aaa;">
+              <h2>Method</h2>
+              <ul>
+                  <li>setItem()</li>
+                  <li>getItem()</li>
+                  <li>removeItem()</li>
+                  <li>clear()</li>
+                </ul>  
+            </div>
+            <div class="column" style="background-color:#bbb;">
+              <h2>Description</h2>
+              <li>Add key and value to local storage</li>
+              <li>Retrieve a value by the key</li>
+              <li>Remove an item by key</li>
+              <li>Clear all storage</li>
+            </div>
+          </div>
 
 	</body>
 
