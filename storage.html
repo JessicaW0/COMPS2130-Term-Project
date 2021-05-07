@@ -13,7 +13,21 @@
             margin-bottom: 20px;
             margin: 200px;
         }
-    
+        
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 370px;
+  padding: 10px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
     </style>
 
 	<body>
@@ -32,8 +46,17 @@
          
         </fieldset>
 
-        <h1>Hi</h1>
-        
+<div class="row">
+  <div class="column" style="background-color:rgb(176, 208, 255);">
+    <h2>Method</h2>
+    <ul>
+        <li>setItem()<span> Add key and value to local storage</li></span>
+        <li>getItem()<span> Retrieve a value by the key</span></li>
+        <li>removeItem()<span> Remove an item by key</span></li>
+        <li>clear()	<span> Clear all storage</span></li>
+      </ul>  
+  </div>
+
 	</body>
 
 
@@ -77,3 +100,19 @@
 
 
 </html>
+
+<!-- JESSICA  -->
+
+<!-- storage.html: If the text in the textbox has the word “storage” in it, then a hyperlink is created using document.
+createElement and appended to the body. Its href attribute value will be “storage.html” which is another web page that
+you have written too. storage.html is an HTML page that uses your own words and or images to explain how window.localStorage 
+works. You will be teaching me (your instructor) how it works. There are lots of tutorials out there, but you must use 
+your own words and your own demonstrations. The clearer your tutorial is, and the better your demonstration is,
+the higher your mark will be. So, give a short write up with explanations and examples of localStorage, plus a demo on this page.  
+
+storage.html hyperlink appears when storage typed into textbox and button clicked
+
+storage.html has a clear explanation in your own words, how localStorage works
+
+storage.html has a clear, simple, functional demonstration, showing a working localStorage app
+-->
