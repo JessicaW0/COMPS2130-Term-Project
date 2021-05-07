@@ -9,6 +9,10 @@
 <body>
     <input type="textbox" id="text">
     <button id="btn">Go</button>
+
+    <img id="bigpic" src="https://maps.gstatic.com/mapfiles/markers2/dd-via-transparent.png" alt="" />
+
+    <button onclick="picture()">Enlarge</button>
     <script>
 
         var textbox = document.getElementById("text")
@@ -16,13 +20,23 @@
         button.onclick = function (){
             if(textbox.value === "storage"){
             var link = document.createElement("a")
-            link.innerHTML = "storage"
-            link.href = "./storage.html"
+            link.innerHTML = "storage",
+            link.href = "./storage.html",
             link.target = "_blank"
             document.body.appendChild(link)
         }
         }
         
+      /*  var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick = function (){
+            if(textbox.value === "alien"){
+              var pic = document.createElement ("img")
+              img.appendChild ="img.tesco.com/Groceries/pi/118/5000175411118/IDShot_90x90.jpg"
+        document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+        }
+        }*/
+
     </script>
 </body>
 </html>

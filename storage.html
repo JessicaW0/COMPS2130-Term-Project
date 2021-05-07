@@ -21,10 +21,14 @@
 
 
 .column {
+    flex: auto;
   float: left;
   padding: 10px;
   height: 200px;
   width: 270px;
+  position:relative;
+  margin-left:200px;
+  
 }
 
 
@@ -50,19 +54,20 @@
             <div id="lstOutput"></div>
          
         </fieldset>
+        
 
         <div class="row">
-            <div class="column" style="background-color:#aaa;">
+            <div class="column" style="background-color:rgb(211, 243, 255);">
               <h2>Method</h2>
-              <ul>
                   <li>setItem()</li>
                   <li>getItem()</li>
                   <li>removeItem()</li>
                   <li>clear()</li>
-                </ul>  
+               
             </div>
-            <div class="column" style="background-color:#bbb;">
+            <div class="column" style="background-color:rgb(211, 243, 255);">
               <h2>Description</h2>
+              
               <li>Add key and value to local storage</li>
               <li>Retrieve a value by the key</li>
               <li>Remove an item by key</li>
