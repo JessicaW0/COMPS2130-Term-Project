@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html>
-    <title>Index</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
 <body>
+    <input type="textbox" id="text">
+    <button id="btn">Go</button>
+    <script>
 
-<p>Click the button to create ....</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<script>
-function myFunction() {
-  var x = document.createElement("INPUT");
-  x.setAttribute("type", "text");
-  x.setAttribute("value", "http://127.0.0.1:5500/storage.html");
-  document.body.appendChild(x);
-}
-</script>
-
+        var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick = function (){
+            if(textbox.value === "storage"){
+            var link = document.createElement("a")
+            link.innerHTML = "storage"
+            link.href = "./storage.html"
+            link.target = "_blank"
+            document.body.appendChild(link)
+        }
+        }
+        
+    </script>
 </body>
 </html>
-
 
 
 
