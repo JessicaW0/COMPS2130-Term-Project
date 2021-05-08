@@ -1,86 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <style>
-        img{width:40px}
-    </style>
-    <title>ALPHABET</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+    <input type="textbox" id="text">
+    <button id="btn">Go</button>
+
     <script>
-        // after the window finishes loading
-        // create a textbox and a button
-		// when the button is clicked: remove all images and HRs from the body
-		// and then create an image for each letter in the textbox,
-		// and put the images at the end of the body
-		// also, if there is a space, put an <hr> instead
 
-        onload=function()
+        var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick=function()
         {
-            let myTextbox = document.createElement("input")
-            myTextbox.type = "text"
-            myTextbox.id = "t"
-            document.body.appendChild(myTextbox)
-            myTextbox.focus()
-
-            document.body.appendChild(document.createElement('br'))
-
-            let myButton = document.createElement("input")
-            myButton.type = "button"
-            myButton.id = "b"
-            myButton.value = "Go"
-            document.body.appendChild(myButton)
-            
-            document.body.appendChild(document.createElement('br'))
-
-            myButton.onclick=function()
-            {
-                let textbox = document.getElementById("t")
-               
-                if (textbox.value==="alphabet") {
-                for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
-                    {
-                     let letter = String.fromCharCode(i)
-     
-                     let img = document.createElement('img')
-                     img.width = 40
-                     img.id = letter
-                     img.src = "images/letters/" + letter + ".png"
-     
-                     document.body.appendChild(img)
-                    }
-                 }
-                    
-            }
-
-
-
+            let textbox = document.getElementById("text")
+           
+            if (textbox.value==="alphabet") {
+            for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+                {
+                 let letter = String.fromCharCode(i)
+        
+                 let img = document.createElement('img')
+                 img.width = 40
+                 img.id = letter
+                 img.src = "images/letters/" + letter + ".png"
+        
+                 document.body.appendChild(img)
+                }
+             }
+                
         }
 
         
+
+
     </script>
-  </head>
-  <body></body>
+</body>
 </html>
 
-
-
-
-<!-- 
-            //  window.onload = function() {
-            //     var textBox1 = document.createElement('input')
-            //     textBox1.id = "first"
-            //     textBox1.type = "text"
-            //     document.body.appendChild(textBox1)
-
-            //     document.body.appendChild(document.createElement("br"))
-
-            //     var goButton = document.createElement('button')
-            //     goButton.id = "go"
-            //     goButton.innerHTML = "Go" 
-            //     document.body.appendChild(goButton) 
-            //     goButton.onclick = buttonClick
-            // } -->
-                
 
 <!-- SOFIA -->
 <!-- alphabet.html: if the text in the textbox has the word “alphabet” in it then loop through the

@@ -18,14 +18,58 @@
         var textbox = document.getElementById("text")
         var button = document.getElementById("btn")
         button.onclick = function (){
-            if(textbox.value === "storage"){
-            var link = document.createElement("a")
-            link.innerHTML = "storage",
-            link.href = "./storage.html",
-            link.target = "_blank"
-            document.body.appendChild(link)
+            //Jessica
+            if(textbox.value === "storage")
+            {
+                var link = document.createElement("a")
+                link.innerHTML = "storage",
+                link.href = "./storage.html",
+                link.target = "_blank"
+                document.body.appendChild(link)
+            }
+            
+             if(textbox.value === "jquery")
+             {
+                var link = document.createElement("a")
+                link.innerHTML = "jquery",
+                link.href = "./jquery.html",
+                link.target = "_blank"
+                document.body.appendChild(link)
+            }
+
+            //SOFIA 
+            if(textbox.value === "alphabet")
+            {
+                for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+                {
+                 let letter = String.fromCharCode(i)
+        
+                 let img = document.createElement('img')
+                 img.width = 40
+                 img.id = letter
+                 img.src = "images/letters/" + letter + ".png"
+        
+                 document.body.appendChild(img)
+                }
+            }
+
+            if(textbox.value === "plugin")
+            {
+                var link = document.createElement("a")
+                link.innerHTML = "plugin",
+                link.href = "./plugin.html",
+                link.target = "_blank"
+                document.body.appendChild(link)
+            }
+
+                        
+            if(textbox.value === "ajax")
+            {
+ 
+            }
+
         }
-        }
+    
         
       /*  var textbox = document.getElementById("text")
         var button = document.getElementById("btn")
