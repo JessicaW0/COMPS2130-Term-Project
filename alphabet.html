@@ -34,18 +34,25 @@
 
             myButton.onclick=function()
             {
-               for(let i = 'z'.charCodeAt(0); i => 'a'.charCodeAt(0); i++)
-               {
-                let letter = String.fromCharCode(i)
-
-                let img = document.createElement('img')
-                img.width = 40
-                img.id = letter
-                img.src = "images/letters/" + letter + ".png"
-
-                document.body.appendChild(img)
-               }
+                let textbox = document.getElementById("t")
+               
+                if (textbox.value==="alphabet") {
+                for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+                    {
+                     let letter = String.fromCharCode(i)
+     
+                     let img = document.createElement('img')
+                     img.width = 40
+                     img.id = letter
+                     img.src = "images/letters/" + letter + ".png"
+     
+                     document.body.appendChild(img)
+                    }
+                 }
+                    
             }
+
+
 
         }
 
