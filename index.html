@@ -1,1 +1,97 @@
-Jessica
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+    <input type="textbox" id="text">
+    <button id="btn">Go</button>
+
+    <img id="bigpic" src="https://maps.gstatic.com/mapfiles/markers2/dd-via-transparent.png" alt="" />
+
+    <button onclick="picture()">Enlarge</button>
+    <script>
+
+        var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick = function (){
+            if(textbox.value === "storage"){
+            var link = document.createElement("a")
+            link.innerHTML = "storage",
+            link.href = "./storage.html",
+            link.target = "_blank"
+            document.body.appendChild(link)
+        }
+        }
+        
+      /*  var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick = function (){
+            if(textbox.value === "alien"){
+              var pic = document.createElement ("img")
+              img.appendChild ="img.tesco.com/Groceries/pi/118/5000175411118/IDShot_90x90.jpg"
+        document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+        }
+        }*/
+
+    </script>
+</body>
+</html>
+
+
+
+<!-- JESSICA  -->
+
+<!-- single textbox and a button 
+  - type in storage, a hyperlink is created using document.createElement and appended to the body 
+  Its href attribute value will be “storage.html”
+
+  -
+index.html has comments about what each partner did
+-----------------------------------------------------
+If the text in the textbox has the word “alien” in it, then an alien image is
+ created and appended to the body of index.html. The alien stays on the document 
+ from this point on. If the user types “walk” in the textbox and presses the button
+  after the alien has been created, the alien will pace back and forth at 1px every
+   100ms. If the user types “run” in the textbox and presses the button after the
+    alien has been created, the alien will pace back and forth at 1px every 10ms.
+     If the user types “stop” in the textbox and presses the button after the alien
+      has been created, the alien will stop moving. If the user types “bye” in 
+      the textbox and presses the button after the alien has been created, the
+       alien will be removed from the document (display:none).
+
+Alien appears when alien typed into textbox and button clicked
+
+Alien walks when walk typed into textbox and button clicked
+
+Alien runs when run typed into textbox and button clicked
+
+Alien stops when stop typed into textbox and button clicked
+
+Alien disappears when bye typed into textbox and button clicked
+
+----------------------------------------------------------------
+If the text in the textbox has the word “jquery” in it, then use plain-old
+ JavaScript to create four images on index.html. Then use jQuery to do the 
+ following: all images must get an HTML width attribute of 200; when the 
+ second image gets clicked, it gets a big fat red border.
+
+Four images get created when jquery typed into textbox and button clicked
+jquery is used to resize html width attribute of all images
+jquery is used to change css border of second image when it is clicked
+
+//Contribution 
+Sofia Sirianni
+- plugin.html
+- Ajax 
+- Alphabet 
+
+Jessica Wu 
+- storage.html
+- Alien 
+- Jquery  
+
+

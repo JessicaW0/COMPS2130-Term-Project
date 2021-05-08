@@ -1,1 +1,136 @@
-Jessica
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Storage</title>
+	</head>
+    <style>
+        input, button {
+            padding: 7px;
+            height: 40px;
+            width: 200px;
+        }
+        
+        fieldset {
+            margin-bottom: 20px;
+            margin: 200px;
+        }
+        
+ *{
+  box-sizing: border-box;
+}
+
+
+.column {
+    flex: auto;
+  float: left;
+  padding: 10px;
+  height: 200px;
+  width: 270px;
+  position:relative;
+  margin-left:200px;
+  
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+    </style>
+
+	<body>
+        
+        <fieldset>
+            <legend>Insert Data</legend>
+            <input id="inpKey" type="text" placeholder="Enter Key...">
+            <input id="inpValue" type="text" placeholder="Enter Value...">
+            <button type="button" id="btnInsert">Insert Data</button>
+            <button type="button" id="removeInsert">Remove</button>
+            
+        </fieldset>
+        <fieldset>
+            <legend>Local Storage</legend>
+            <div id="lstOutput"></div>
+         
+        </fieldset>
+        
+
+        <div class="row">
+            <div class="column" style="background-color:rgb(211, 243, 255);">
+              <h2>Method</h2>
+                  <li>setItem()</li>
+                  <li>getItem()</li>
+                  <li>removeItem()</li>
+                  <li>clear()</li>
+               
+            </div>
+            <div class="column" style="background-color:rgb(211, 243, 255);">
+              <h2>Description</h2>
+              
+              <li>Add key and value to local storage</li>
+              <li>Retrieve a value by the key</li>
+              <li>Remove an item by key</li>
+              <li>Clear all storage</li>
+            </div>
+          </div>
+
+	</body>
+
+
+
+<script>
+    const inpKey = document.getElementById("inpKey");
+    const inpValue = document.getElementById("inpValue");
+    const btnInsert = document.getElementById("btnInsert");
+    const lstOutput = document.getElementById("lstOutput");
+    const removeInsert = document.getElementById("removeInsert");
+    
+    btnInsert.onclick = function(){
+        const key = inpKey.value;
+        const value = inpValue.value;
+        
+        if(key && value){
+            
+            localStorage.setItem(key,value);
+            location.reload();
+        }
+    };
+        for (let i=0; i < localStorage.length; i++){
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            console.log(key);
+            console.log(value);
+            
+            lstOutput.innerHTML += key +" : " +value +'</br>';
+
+        }
+       
+       // window.localStorage.clear();
+        removeInsert.onclick = function(){
+       localStorage.clear()
+        }
+      
+
+   
+
+</script>
+
+
+</html>
+
+<!-- JESSICA  -->
+
+<!-- storage.html: If the text in the textbox has the word “storage” in it, then a hyperlink is created using document.
+createElement and appended to the body. Its href attribute value will be “storage.html” which is another web page that
+you have written too. storage.html is an HTML page that uses your own words and or images to explain how window.localStorage 
+works. You will be teaching me (your instructor) how it works. There are lots of tutorials out there, but you must use 
+your own words and your own demonstrations. The clearer your tutorial is, and the better your demonstration is,
+the higher your mark will be. So, give a short write up with explanations and examples of localStorage, plus a demo on this page.  
+
+storage.html hyperlink appears when storage typed into textbox and button clicked
+
+storage.html has a clear explanation in your own words, how localStorage works
+
+storage.html has a clear, simple, functional demonstration, showing a working localStorage app
+-->
