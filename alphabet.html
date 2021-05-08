@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
+    <title>ALPHABET</title>
 </head>
 <body>
     <input type="textbox" id="text">
     <button id="btn">Go</button>
+    <br>
 
     <script>
 
@@ -30,9 +31,21 @@
         
                  document.body.appendChild(img)
                 }
+                var img = document.getElementsByTagName("img")
+    
+                for(var i = 0; i < img.length; i++)
+                {
+                    img[i].onclick=function()
+                    {
+                        this.src = "images/letters/a.png"
+                    }
+                }
              }
                 
+
+
         }
+
 
         
 
