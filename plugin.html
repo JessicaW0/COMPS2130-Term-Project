@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<body>
-  <head>
-    <link href="/Plugin/style.css" rel="stylesheet" type="text/css" media="all">
-  </head>
+<html>
+    <head>
+        <title>COUNTDOWN</title>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="jquery.countdown.min.js"></script>
+        <script src="./Plugin/jquery.countdown.js"></script>
+        <script src="./Plugin/jquery.countdown.min.js"></script>
+        <link rel="stylesheet" href="countdown.css"> 
+    </head>
+    <body>
+        <ul id="example">
+            <li><span class="days">00</span><p class="days_text">Days</p></li>
+            <li class="seperator">:</li>
+            <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
+            <li class="seperator">:</li>
+            <li><span class="minutes">00</span><p class="minutes_text">Minutes</p></li>
+            <li class="seperator">:</li>
+            <li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
+            <h2> until BCIT semester is over </h2>
+            <h3>May 28th, 2021</h3>
+          </ul>
+        
+          <script>
 
-  <body>
-    <div class='container'>
-      <h1 class='timer' data-minutes-left=12 ></h1>
-      <p>Days until BCIT semester is over</p>
-      <section class='actions'></section>
-    </div>
-  </body>
-
-  <script src="./Plugin/jquery.js"></script>
-  <script src="./Plugin/jquery.simple.timer.js"></script>
-  <script src="./Plugin/dojo.js"></script>
-</body>
+          $('#example').countdown({
+            date: '5/28/2021 23:59:59'
+            }, function () {
+              alert('Congrats! You did it!! :)');
+            });
+            
+            </script>
+    </body>
+</html>
 
 <!-- SOFIA  -->
 
