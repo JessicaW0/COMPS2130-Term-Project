@@ -1,33 +1,35 @@
+<!-- SOFIA  -->
 <!DOCTYPE html>
 <html>
     <head>
-        <Title>PLUGIN</Title>
-        <script>
-            window.onload = function() {
-                var textBox1 = document.createElement('input')
-                textBox1.id = "first"
-                textBox1.type = "text"
-                document.body.appendChild(textBox1)
-
-                document.body.appendChild(document.createElement("br"))
-
-                var goButton = document.createElement('button')
-                goButton.id = "go"
-                goButton.innerHTML = "Go" 
-                document.body.appendChild(goButton) 
-                goButton.onclick = buttonClick
-            }
-        </script>
+        <title>COUNTDOWN</title>
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="jquery.countdown.min.js"></script>
+        <script src="./Plugin/jquery.countdown.js"></script>
+        <script src="./Plugin/jquery.countdown.min.js"></script>
+        <link rel="stylesheet" href="countdown.css"> 
     </head>
     <body>
+        <ul id="example">
+            <li><span class="days">00</span><p class="days_text">Days</p></li>
+            <li class="seperator">:</li>
+            <li><span class="hours">00</span><p class="hours_text">Hours</p></li>
+            <li class="seperator">:</li>
+            <li><span class="minutes">00</span><p class="minutes_text">Minutes</p></li>
+            <li class="seperator">:</li>
+            <li><span class="seconds">00</span><p class="seconds_text">Seconds</p></li>
+            <h2> until BCIT semester is over </h2>
+            <h3>May 28th, 2021</h3>
+          </ul>
+        
+          <script>
+
+          $('#example').countdown({
+            date: '5/28/2021 23:59:59'
+            }, function () {
+              alert('Congrats! You did it!! :)');
+            });
+            
+            </script>
     </body>
 </html>
-<!-- SOFIA  -->
-
-<!-- plugin.html: if the text in the textbox has the word “plugin” in it, then a hyperlink is created
-using document.createElement and appended to the body. Its href attribute value will be
-“plugin.html” which is another web page that you have written too. Here you will show off any  
-
-jquery plugin you want. There are some awesome and useful jquery plugins, and you can choose
-any one. Clearly, the more “wow” it has, the better it is.
--->

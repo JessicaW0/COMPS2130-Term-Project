@@ -1,31 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <Title>ALPHABET</Title>
-        <script>
-             window.onload = function() {
-                var textBox1 = document.createElement('input')
-                textBox1.id = "first"
-                textBox1.type = "text"
-                document.body.appendChild(textBox1)
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHABET</title>
+</head>
+<body>
+    <input type="textbox" id="text">
+    <button id="btn">Go</button>
+    <br>
 
-                document.body.appendChild(document.createElement("br"))
+    <script>
 
-                var goButton = document.createElement('button')
-                goButton.id = "go"
-                goButton.innerHTML = "Go" 
-                document.body.appendChild(goButton) 
-                goButton.onclick = buttonClick
-            }
-            
-        </script>
-    </head>
-    <body>
-    </body>
+        var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick=function()
+        {
+            let textbox = document.getElementById("text")
+           
+            if (textbox.value==="alphabet") {
+            for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+                {
+                 let letter = String.fromCharCode(i)
+        
+                 let img = document.createElement('img')
+                 img.width = 40
+                 img.id = letter
+                 img.src = "images/letters/" + letter + ".png"
+        
+                 document.body.appendChild(img)
+                }
+                var img = document.getElementsByTagName("img")
+    
+                for(var i = 0; i < img.length; i++)
+                {
+                    img[i].onclick=function()
+                    {
+                        this.src = "images/letters/a.png"
+                    }
+                }
+             }
+                
+
+
+        }
+
+
+        
+
+
+    </script>
+</body>
 </html>
-<!-- SOFIA -->
-<!-- alphabet.html: if the text in the textbox has the word “alphabet” in it then loop through the
-letters backwards from z to a and append images of the letters to the document; each letter
-must be 40px wide. Whenever a letter is clicked, all the images on the document get that
-letter’s src -->
+
 

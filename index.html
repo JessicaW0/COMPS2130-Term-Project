@@ -2,6 +2,105 @@
 <html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Project</title>
+</head>
+<body>
+    <input type="textbox" id="text">
+    <button id="btn">Go</button>
+    <br>
+
+    <img id="bigpic" src="https://maps.gstatic.com/mapfiles/markers2/dd-via-transparent.png" alt="" />
+
+    <button onclick="picture()">Enlarge</button>
+    <script>
+
+        var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick = function (){
+            //Jessica
+            if(textbox.value === "storage")
+            {
+                var link = document.createElement("a")
+                link.innerHTML = "storage",
+                link.href = "./storage.html",
+                link.target = "_blank"
+                document.body.appendChild(link)
+            }
+            
+             if(textbox.value === "jquery")
+             {
+                var link = document.createElement("a")
+                link.innerHTML = "jquery",
+                link.href = "./jquery.html",
+                link.target = "_blank"
+                document.body.appendChild(link)
+            }
+
+            //SOFIA 
+            if(textbox.value === "alphabet")
+            {
+                for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
+                {
+                 let letter = String.fromCharCode(i)
+        
+                 let img = document.createElement('img')
+                 img.width = 40
+                 img.id = letter
+                 img.src = "images/letters/" + letter + ".png"
+        
+                 document.body.appendChild(img)
+                }
+            }
+
+            if(textbox.value === "plugin")
+            {
+                var link = document.createElement("a")
+                link.innerHTML = "plugin",
+                link.href = "./plugin.html",
+                link.target = "_blank"
+                document.body.appendChild(link)
+            }
+
+                        
+            if(textbox.value === "ajax")
+            {
+                var r = new XMLHttpRequest()
+                r.open("GET", "advice.txt", true)
+                r.onreadystatechange=processData
+                r.send(null)
+                function processData()
+                {
+                    if(r.readyState == 4)    
+                    {
+                        var json = r.responseText.toUpperCase()
+                        var advice = JSON.parse(json)
+                        console.log(advice)
+                        var h1 = document.createElement("h1")
+                        h1.innerHTML = advice
+                        document.body.appendChild(h1)
+
+                    }
+                }
+
+ 
+            }
+
+        }
+    
+        
+      /*  var textbox = document.getElementById("text")
+        var button = document.getElementById("btn")
+        button.onclick = function (){
+            if(textbox.value === "alien"){
+              var pic = document.createElement ("img")
+              img.appendChild ="img.tesco.com/Groceries/pi/118/5000175411118/IDShot_90x90.jpg"
+        document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+
   <meta charset="UTF-8">
   <title>Index</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -50,7 +149,14 @@
             stepNumber = 0
           }
           alien.src = "./images/alien/alienrwalk" + stepNumber + '.gif'
+
         }
+
+
+    </script>
+    <div></div>
+</body>
+</html>
 
         //move right 
         function moveRight() {
@@ -72,6 +178,7 @@
             }
           }
         }
+
 
         function leftStep() {
           stepNumber = stepNumber + 1
@@ -208,5 +315,10 @@ Sofia Sirianni
 
 Jessica Wu 
 - storage.html
+- Alien 
+- Jquery  
+
+
 - Alien section
 - Jquery section -->
+
