@@ -1,1 +1,1 @@
-{ "Don't", "be", "sad", ",", "be", "glad",};
+[ "Don't be sad, be glad"]
