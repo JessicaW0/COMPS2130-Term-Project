@@ -13,6 +13,13 @@
 
     <script>
 
+        function deleteImage(){
+            var images = document.getElementsByTagName('img');
+            var x = images.length;
+            for (var i = 0; i < x; i++){
+                images[0].parentNode.removeChild(images[0]);
+            }
+        }
         var textbox = document.getElementById("text")
         var button = document.getElementById("btn")
         button.onclick=function()
@@ -20,6 +27,7 @@
             let textbox = document.getElementById("text")
            
             if (textbox.value==="alphabet") {
+                deleteImage()
             for(let i = 'z'.charCodeAt(0); i >= 'a'.charCodeAt(0); i--)
                 {
                  let letter = String.fromCharCode(i)
@@ -28,23 +36,27 @@
                  img.width = 40
                  img.id = letter
                  img.src = "images/letters/" + letter + ".png"
-        
+
+                 img.onclick = function(){
+                     var change = this.id
+                     deleteImage()
+
+                     for(let i = 1; i <= 26; i++)
+                     {
+                        let img = document.createElement('img')
+                        img.width = 40
+                        img.id = change
+                        img.src = "images/letters/" + change + ".png"
+                        document.body.appendChild(img)
+                     }
+                 }
                  document.body.appendChild(img)
+        
                 }
-                var img = document.getElementsByTagName("img")
-    
-                for(var i = 0; i < img.length; i++)
-                {
-                    img[i].onclick=function()
-                    {
-                        this.src = "images/letters/a.png"
-                    }
-                }
-             }
                 
-
-
+            }
         }
+
 
 
         
