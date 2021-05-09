@@ -67,7 +67,27 @@
                         
             if(textbox.value === "ajax")
             {
-                
+                // var advice = document.createElement("h1")
+                // advice.innerHTML = hint
+                // document.body.appendChild(advice)
+                var r = new XMLHttpRequest()
+                r.open("GET", "advice.txt", true)
+                r.onreadystatechange=processData
+                r.send(null)
+           function processData()
+           {
+               if(r.readyState == 4)    // if the data is totally ready
+               {
+                   if(r.status == 200)
+                   {
+                      var h1 = document.createElement("h1")
+                      h1.innerHTML = r.responseText
+                      document.body.appendChild(h1)
+                   }
+               }
+           }
+
+ 
             }
 
         }
