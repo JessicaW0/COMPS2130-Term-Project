@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,64 +100,225 @@
               var pic = document.createElement ("img")
               img.appendChild ="img.tesco.com/Groceries/pi/118/5000175411118/IDShot_90x90.jpg"
         document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+
+    //get the textbox
+    window.onload = function final() {
+      let myTextbox = document.getElementById("t")
+      let myButton = document.getElementById("b")
+
+      myButton.onclick = function () {
+        if (myTextbox.value.toUpperCase().includes("STORAGE")) {
+          let a = document.createElement('a')
+          let linkText = document.createTextNode("storage.html")
+          a.appendChild(linkText);
+          a.title = "storage.html";
+          a.href = "storage.html";
+          document.body.appendChild(a)
+
         }
-        }*/
+
+        //set things up 
+
+        movingTimes = null
+        walking = null
+        running = null
+        alienCheck = true
+        stepNumber = 0
+        left = null
+        right = true
+        alien = document.getElementById("alien")
+
+        //stop alien 
+        function stopMoving() {
+          if (movingTimer != null) {
+            clearInterval(movingTimer)
+            movingTimer = null
+          }
+        }
+
+        function rightStep() {
+          stepNumber = stepNumber + 1
+
+          if (stepNumber > 30) {
+            stepNumber = 0
+          }
+          alien.src = "./images/alien/alienrwalk" + stepNumber + '.gif'
+
+        }
+
 
     </script>
     <div></div>
 </body>
 </html>
 
+        //move right 
+        function moveRight() {
+          right = true
+          left = false
+          rightStep()
+          alien.style.left = parseInt(alien.style.left) + 1 + 'px'
+
+          //stopping alien from walking off the screen
+
+          if (parseInt(alien.style.left) === innerWidth - 76) {
+            stopMoving()
+            if (running) {
+              movingTimer = setInterval(moveLeft, 10)
+            }
+
+            else if (walking) {
+              movingTimer = setInterval(moveLeft, 100)
+            }
+          }
+        }
 
 
-<!-- JESSICA  -->
+        function leftStep() {
+          stepNumber = stepNumber + 1
 
-<!-- single textbox and a button 
-  - type in storage, a hyperlink is created using document.createElement and appended to the body 
-  Its href attribute value will be “storage.html”
+          if (stepNumber > 30) {
+            stepNumber = 0
+          }
+          alien.src = "./images/alien/alienrwalk" + stepNumber + '.gif'
+        }
 
-  -
-index.html has comments about what each partner did
------------------------------------------------------
-If the text in the textbox has the word “alien” in it, then an alien image is
- created and appended to the body of index.html. The alien stays on the document 
- from this point on. If the user types “walk” in the textbox and presses the button
-  after the alien has been created, the alien will pace back and forth at 1px every
-   100ms. If the user types “run” in the textbox and presses the button after the
-    alien has been created, the alien will pace back and forth at 1px every 10ms.
-     If the user types “stop” in the textbox and presses the button after the alien
-      has been created, the alien will stop moving. If the user types “bye” in 
-      the textbox and presses the button after the alien has been created, the
-       alien will be removed from the document (display:none).
+        // move left 
+        function moveLeft() {
+          left = true
+          right = false
+          leftStep()
+          alien.style.left = parseInt(alien.style.left) - 1 + 'px'
 
-Alien appears when alien typed into textbox and button clicked
+          //stopping alien from walking off the screen 
+          if (parseInt(alien.style.left) === -20) {
+            stopMoving()
+            if (running) {
+              movingTimer = setInterval(moveRight, 10)
+            }
 
-Alien walks when walk typed into textbox and button clicked
+            else if (walking) {
+              movingTimer = setInterval(moveRight, 100)
+            }
+          }
+        }
 
-Alien runs when run typed into textbox and button clicked
+        //textbox value for alien
+        if (myTextbox.value.toLowerCase().includes("alien")) {
+          var alien = document.createElement('img')
+          alien.id = "alien"
+          alien.style.display = "block"
+          alien.src = "./images/alien/alienrwalk0.gif"
+          alien.style.position = 'absolute'
+          alien.style.left = "10px"
+          alien.style.top = "80px";
+          document.body.appendChild(alien)
+          alienCheck = true
+        }
 
-Alien stops when stop typed into textbox and button clicked
+        else if (myTextbox.value.toLowerCase().includes("walk") && alienCheck === true) {
+          //stopMoving()
+          running = null
 
-Alien disappears when bye typed into textbox and button clicked
+          if (walking === null) {
+            walking = true
 
-----------------------------------------------------------------
-If the text in the textbox has the word “jquery” in it, then use plain-old
- JavaScript to create four images on index.html. Then use jQuery to do the 
- following: all images must get an HTML width attribute of 200; when the 
- second image gets clicked, it gets a big fat red border.
+            if (right) {
+              movingTimer = setInterval(moveRight, 100)
+            }
+            if (left) {
+              movingTimer = setInterval(moveLeft, 100)
+            }
+          }
+        }
 
-Four images get created when jquery typed into textbox and button clicked
-jquery is used to resize html width attribute of all images
-jquery is used to change css border of second image when it is clicked
+        else if (myTextbox.value.toLowerCase().includes("run")) {
+          //stopMoving()
+          walking = null
 
-//Contribution 
+          if (running === null) {
+            running = true
+            if (right) {
+              movingTimer = setInterval(moveRight, 10)
+            }
+            if (left) {
+              movingTimer = setInterval(moveLeft, 10)
+            }
+          }
+        }
+
+        else if (myTextbox.value.toUpperCase().includes("STOP") && alienCheck === true) {
+          clearTimeout(movingTimer)
+          movingTimer = null
+        }
+
+        else if (myTextbox.value.toUpperCase().includes("BYE")) {
+          alien.style.display = "none"
+
+          //stopMoving()
+          // movingTimer = null
+          // walking = null
+          // running = null
+          // alienCheck = null
+          // left = null
+          // right = true
+        }
+
+
+        //jquery 
+
+
+        if (myTextbox.value.toUpperCase().includes("JQUERY")) {
+          for (var i = 1; i < 5; i++)
+          {
+            var jquery = document.createElement("img")
+            jquery.src = "./images/cat.jpg"
+          $(jquery).width(200)
+          $(function () {
+            $($("img")[1]).click(function () {
+              $(this).css('border', "solid 10px red");
+            });
+          });
+          document.body.appendChild(jquery);
+        }
+        }
+      }
+    }
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <input type="myTextbox" id="t">
+  <button id="b">Go</button>
+</body>
+
+</html>
+
+
+
+<!-- Contribution 
 Sofia Sirianni
 - plugin.html
-- Ajax 
-- Alphabet 
+- Ajax section 
+- alphabet.html 
 
 Jessica Wu 
 - storage.html
 - Alien 
 - Jquery  
+
+
+- Alien section
+- Jquery section -->
 

@@ -19,23 +19,20 @@
   box-sizing: border-box;
 }
 
-
-.column {
-    flex: auto;
-  float: left;
-  padding: 10px;
-  height: 200px;
-  width: 270px;
-  position:relative;
-  margin-left:200px;
-  
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
+td, th {
+  border: 1px solid #b0e5fd;
+  text-align: left;
+  padding: 8px;
+}
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+tr:nth-child(even) {
+  background-color: #afd8e2;
 }
     </style>
 
@@ -56,24 +53,37 @@
         </fieldset>
         
 
-        <div class="row">
-            <div class="column" style="background-color:rgb(211, 243, 255);">
-              <h2>Method</h2>
-                  <li>setItem()</li>
-                  <li>getItem()</li>
-                  <li>removeItem()</li>
-                  <li>clear()</li>
-               
-            </div>
-            <div class="column" style="background-color:rgb(211, 243, 255);">
-              <h2>Description</h2>
-              
-              <li>Add key and value to local storage</li>
-              <li>Retrieve a value by the key</li>
-              <li>Remove an item by key</li>
-              <li>Clear all storage</li>
-            </div>
-          </div>
+        <table>
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+              <th>Code</th>
+            </tr>
+            <tr>
+              <td>setItem()</td>
+              <td>Add key and value to local storage</td>
+              <td>localStorage.setItem('key', 'value')</td>
+            </tr>
+            <tr>
+              <td>getItem()</td>
+              <td>Retrieve a value by the key</td>
+              <td>localStorage.getItem('key')</td>
+            </tr>
+            <tr>
+              <td>removeItem()</td>
+              <td>Remove an item by key</td>
+              <td>localStorage.removeItem('key')</td>
+            </tr>
+            <tr>
+              <td>clear()</td>
+              <td>Clear all storage</td>
+              <td>localStorage.clear()</td>
+            </tr>
+            <tr>
+          
+            </tr>
+          </table>
+          
 
 	</body>
 
@@ -127,10 +137,7 @@ you have written too. storage.html is an HTML page that uses your own words and 
 works. You will be teaching me (your instructor) how it works. There are lots of tutorials out there, but you must use 
 your own words and your own demonstrations. The clearer your tutorial is, and the better your demonstration is,
 the higher your mark will be. So, give a short write up with explanations and examples of localStorage, plus a demo on this page.  
-
 storage.html hyperlink appears when storage typed into textbox and button clicked
-
 storage.html has a clear explanation in your own words, how localStorage works
-
 storage.html has a clear, simple, functional demonstration, showing a working localStorage app
 -->
