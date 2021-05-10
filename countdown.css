@@ -1,3 +1,12 @@
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #b0e5fd;
+    color: rgb(48, 111, 148);
+  }
+
 ul#example {
     list-style: none;
     margin: 50px 0;
@@ -12,6 +21,7 @@ ul#example {
     font-size: 80px;
     font-weight: 300;
     line-height: 80px;
+    color: rgb(29, 71, 95);
   }
   
   ul#example li.seperator {
@@ -21,6 +31,10 @@ ul#example {
   }
   
   ul#example li p {
-    color: #a7abb1;
+    
     font-size: 25px;
+  }
+
+  h2, h3 {
+    color: rgb(29, 71, 95);
   }
