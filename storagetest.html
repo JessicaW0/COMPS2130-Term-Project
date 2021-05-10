@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Storage</title>
+	</head>
+    <style>
+
+      body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: arial, sans-serif;
+      }
+        
+      input, button {
+        padding: 7px;
+        height: 40px;
+        width: 200px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+      }
+        
+      fieldset {
+        background-color: rgb(161, 232, 253);
+        margin-bottom: 20px;
+        margin: 50px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+      }
+        
+      *{
+        box-sizing: border-box;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin:0;
+      }
+
+      td, th {
+        border: 1px solid #b0e5fd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #afd8e2;
+      }
+
+      h1{
+        text-align: center;
+        margin:40px;
+        font-weight: bold;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+
+      ul{
+      margin-bottom: 30px;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      }
+
+      li {
+        margin: 20px;
+      }
+
+      button{
+        color: #b0e5fd;
+        background-color: rgb(48, 111, 148);
+        border: none;
+        border-radius: 7px;
+        margin: 5px;
+        
+      }
+
+      hr {
+        color: rgb(48, 111, 148);
+      }
+
+    </style>
+
+	<body>
+
+
+    <h1>Local Storage</h1>
+    
+    <ul>
+      <li>Data that has no expiration date and will stay after the browser window is closed</li>
+      <li>window.localStorage is used to get access to the property</li>
+      <li>Data is stored using key-value pairs, string-string</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>setItem()</td>
+        <td>Add key and value to local storage</td>
+        <td>localStorage.setItem('key', 'value')</td>
+      </tr>
+      <tr>
+        <td>getItem()</td>
+        <td>Retrieve a value by the key</td>
+        <td>localStorage.getItem('key')</td>
+      </tr>
+      <tr>
+        <td>removeItem()</td>
+        <td>Remove an item by key</td>
+        <td>localStorage.removeItem('key')</td>
+      </tr>
+      <tr>
+        <td>clear()</td>
+        <td>Clear all storage</td>
+        <td>localStorage.clear()</td>
+      </tr>
+      <tr>
+    
+      </tr>
+    </table>
+
+        <fieldset>
+            <legend>Insert Data</legend>
+            <input id="inpKey" type="text" placeholder="Enter Key...">
+            <input id="inpValue" type="text" placeholder="Enter Value...">
+            <button type="button" id="btnInsert">Insert Data</button>
+            <button type="button" id="removeInsert">Remove</button>
+            
+        </fieldset>
+        <fieldset>
+            <legend>Local Storage</legend>
+            <div id="lstOutput"></div>
+        </fieldset>
+
+        <img src="./images/step1.png" alt="step1" width="700px" height="250px">
+        <div class="step1">
+        <li>Create fieldset with two input boxes and buttons</li>
+        <li>Have id for each of them</li>  
+        <li>Set another fieldset for the Local Storage output</li>
+        </div>
+
+        <img src="./images/step2.png" alt="step2" width="700px" height="250px">
+        <div class="step2">
+          <li>First to the refrences to the 5 important elements</li>
+          <li>When the button is pressed, add the key value to the local storage</li> 
+          <li>Use const to get key and value</li> 
+          </div>
+
+        <img src="./images/step3.png" alt="step3" width="700px" height="280px">
+        <div class="step3">
+          <li>Use the if function to make sure we have texts before we store the data</li>
+          <li>loop through all the key value and put in in local storage</li> 
+          <li>Create const to get key from on of the local storage entry</li>
+          <li>log out when the button is pressed on </li>
+
+          </div>
+
+	</body>
+<script>
+    const inpKey = document.getElementById("inpKey");
+    const inpValue = document.getElementById("inpValue");
+    const btnInsert = document.getElementById("btnInsert");
+    const removeInsert = document.getElementById("removeInsert");
+    const lstOutput = document.getElementById("lstOutput");
+ 
+    
+    btnInsert.onclick = function(){
+        const key = inpKey.value;
+        const value = inpValue.value;
+        
+        if(key && value){
+            
+            localStorage.setItem(key,value);
+            location.reload();
+        }
+    };
+        for (let i=0; i < localStorage.length; i++){
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            console.log(key);
+            console.log(value);
+            
+            lstOutput.innerHTML += key +" : " +value +'</br>';
+
+        }
+       // window.localStorage.clear();
+        removeInsert.onclick = function(){
+       localStorage.clear()
+        }   
+</script>
+
+
+</html>
+
+<!-- JESSICA  -->
+
+<!-- storage.html: If the text in the textbox has the word “storage” in it, then a hyperlink is created using document.
+createElement and appended to the body. Its href attribute value will be “storage.html” which is another web page that
+you have written too. storage.html is an HTML page that uses your own words and or images to explain how window.localStorage 
+works. You will be teaching me (your instructor) how it works. There are lots of tutorials out there, but you must use 
+your own words and your own demonstrations. The clearer your tutorial is, and the better your demonstration is,
+the higher your mark will be. So, give a short write up with explanations and examples of localStorage, plus a demo on this page.  
+storage.html hyperlink appears when storage typed into textbox and button clicked
+storage.html has a clear explanation in your own words, how localStorage works
+storage.html has a clear, simple, functional demonstration, showing a working localStorage app
+-->

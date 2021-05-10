@@ -245,6 +245,7 @@
         
                 if(myTextbox.value === "ajax")
                 {
+                  deleteImage()
                   var r = new XMLHttpRequest()
                   r.open("GET", "advice.txt", true)
                   r.onreadystatechange=processData
